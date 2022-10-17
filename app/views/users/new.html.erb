@@ -11,7 +11,7 @@
   <input type="submit" value="Submit">
 </form>
 -->
-<%= form_with(url: "/users", method: "post") do %>
+<!--<%= form_with(url: "/users", method: "post") do %>
     <%= label_tag(:username, "Username:") %>
     <%= text_field_tag(:username) %>
     <%= label_tag(:email, "Email:") %>
@@ -19,4 +19,15 @@
     <%= label_tag(:password, "PPassword:") %>
     <%= password_field_tag(:password) %>
     <%= submit_tag("Submit") %>
+  <% end %>
+  -->
+
+  <%= form_with model: @user do |form| %>
+    <%= form.label :username, "Username:" %>
+    <%= form.text_field :username %>
+    <%= form.label :email, "Email:" %>
+    <%= form.email_field :email, placeholder: "example@example.com" %>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %>
+    <%= form.submit "Create" %>
   <% end %>
