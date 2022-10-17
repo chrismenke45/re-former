@@ -22,7 +22,7 @@
   <% end %>
   -->
 
-  <%= form_with model: @user do |form| %>
+  <!--<%= form_with model: @user do |form| %>
     <%= form.label :username, "Username:" %>
     <%= form.text_field :username %>
     <%= form.label :email, "Email:" %>
@@ -31,3 +31,5 @@
     <%= form.password_field :password %>
     <%= form.submit "Create" %>
   <% end %>
+  -->
+  <%= render partial: "user_form" %> 
